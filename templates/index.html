@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Căutare Hoteluri</title>
+</head>
+<body>
+    <h1>Căutare Hoteluri</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <form action="/search" method="post">
+        <label for="city">Oraș:</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="checkin">Data Check-in:</label>
+        <input type="date" id="checkin" name="checkin"><br><br>
+
+        <label for="checkout">Data Check-out:</label>
+        <input type="date" id="checkout" name="checkout"><br><br>
+
+        <label for="adults">Adulți:</label>
+        <input type="number" id="adults" name="adults" min="1" value="1"><br><br>
+
+        <input type="submit" value="Caută">
+    </form>
+
+</body>
+</html>

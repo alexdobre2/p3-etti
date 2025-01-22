@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#hotelsList {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin: auto;
+}
+
+.hotel {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.hotel h2, .hotel p {
+    margin: 10px 0;
+}
+
+.rating {
+    color: #666;
+    font-size: 0.9em;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+h1 {
+    color: #333;
+    margin-top: 50px; 
+}
+
+form {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: inline-block; 
+    margin-top: 20px;
+}
+
+label, input {
+    margin: 10px;
+    display: block; 
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px; 
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

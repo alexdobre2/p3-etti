@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Rezultate Cautare Hoteluri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function sortHotels(type, order) {
+            var hotels = Array.prototype.slice.call(document.querySelectorAll('.hotel'));
+            hotels.sort(function(a, b) {
+                var valueA = type === 'price' ? parseFloat(a.getAttribute('data-price')) : parseInt(a.getAttribute('data-rating'));
+                var valueB = type === 'price' ? parseFloat(b.getAttribute('data-price')) : parseInt(b.getAttribute('data-rating'));
+                return (order === 'asc' ? valueA - valueB : valueB - valueA);
+            });
+            var list = document.getElementById('hotelsList');
+            list.innerHTML = '';
+            hotels.forEach(function(hotel) {
+                list.appendChild(hotel);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Rezultate Cautare Hoteluri</h1>
+<button onclick="sortHotels('price', 'asc')">Sortează Preț Crescător</button>
+<button onclick="sortHotels('price', 'desc')">Sortează Preț Descrescător</button>
+<button onclick="sortHotels('rating', 'asc')">Sortează Rating Crescător</button>
+<button onclick="sortHotels('rating', 'desc')">Sortează Rating Descrescător</button>
+<ul id="hotelsList">
+{% for hotel in hotels %}
+<li class="hotel" data-price="{{ hotel['numeric_price'] }}" data-rating="{{ hotel['rating_percentage'] }}">
+<h2>Hotel: {{ hotel['hotel_name'] }}</h2>
+<h3>Camera: {{ hotel['room_name'] }}</h3>
+<p>Preț: {{ hotel['price'] }} USD</p>
+<p>Rating: {{ hotel['rating_percentage'] or 'N/A' }}</p>
+    <a href="{{ hotel['pic'] }}" target="_blank">Vezi Poza</a>
+</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
